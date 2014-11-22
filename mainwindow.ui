@@ -52,10 +52,15 @@
    <property name="text">
     <string>&amp;Open File</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset theme="exit"/>
+    <iconset theme="exit">
+     <normaloff/>
+    </iconset>
    </property>
    <property name="text">
     <string>E&amp;xit</string>
