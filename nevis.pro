@@ -46,6 +46,13 @@ translations.files = translations/*.qm
 DEFINES += TRANSLATION_PATH=$$translations.path
 DEFINES += DOC_PATH=$$doc.path
 
+INSTALLS += target\
+    images \
+    desktop \
+    doc \
+    license \
+    translations
+
 
 SOURCES += main.cpp\
         mainwindow.cpp
