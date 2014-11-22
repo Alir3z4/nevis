@@ -51,3 +51,20 @@ void MainWindow::on_actionOpenFile_triggered()
         file.close();
     }
 }
+
+void MainWindow::on_actionSave_triggered()
+{
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Save file"), QSring(), tr("Any File (*.*)"));
+
+    if (!fileName.isEmpty()) {
+        QFile file(fileName);
+        if (!file.open(QIODevice::WriteOnly)) {
+            QMessageBox::critical(this, tr("Error"), tr("Could not save file"));
+        } else {
+            QTextStream stream(&file);
+            stream << ui->textEditor->toPlainText();
+            stream.flush();;
+            file.close();
+        }
+    }
+}
