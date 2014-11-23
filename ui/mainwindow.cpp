@@ -20,6 +20,7 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ui/dialog/about_dialog.h"
 #include <QFileDialog>
 #include <QFile>
 #include <QMessageBox>
@@ -72,4 +73,10 @@ void MainWindow::on_actionSave_triggered()
 void MainWindow::on_actionAboutQt_triggered()
 {
     qApp->aboutQt();
+}
+
+void MainWindow::on_actionAboutNevis_triggered()
+{
+    AboutDialog about_dialog(this);
+    about_dialog.exec();
 }
