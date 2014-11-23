@@ -55,11 +55,14 @@ INSTALLS += target\
 
 
 SOURCES += main.cpp\
-        ui/mainwindow.cpp
+        ui/mainwindow.cpp \
+    ui/dialog/about_dialog.cpp
 
-HEADERS  += ui/mainwindow.h
+HEADERS  += ui/mainwindow.h \
+    ui/dialog/about_dialog.h
 
-FORMS    += ui/mainwindow.ui
+FORMS    += ui/mainwindow.ui \
+    ui/dialog/about_dialog.ui
 
 OTHER_FILES += \
     README.md \
