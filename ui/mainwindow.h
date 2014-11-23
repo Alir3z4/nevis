@@ -40,6 +40,7 @@ private slots:
     void on_actionSave_triggered();
     void on_actionAboutQt_triggered();
     void on_actionAboutNevis_triggered();
+    void on_actionReportBug_triggered();
 
 private:
     Ui::MainWindow *ui;

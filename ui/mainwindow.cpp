@@ -21,6 +21,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "ui/dialog/about_dialog.h"
+#include "ui/dialog/report_bug_dialog.h"
 #include <QFileDialog>
 #include <QFile>
 #include <QMessageBox>
@@ -79,4 +80,10 @@ void MainWindow::on_actionAboutNevis_triggered()
 {
     AboutDialog about_dialog(this);
     about_dialog.exec();
+}
+
+void MainWindow::on_actionReportBug_triggered()
+{
+    ReportBugDialog report_bug_dialog;
+    report_bug_dialog.exec();
 }
