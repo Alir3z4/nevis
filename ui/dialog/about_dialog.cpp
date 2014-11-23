@@ -20,12 +20,29 @@
 
 #include "about_dialog.h"
 #include "ui_about_dialog.h"
+#include "utils/paths.h"
+#include <QFile>
+#include <QTextStream>
 
 AboutDialog::AboutDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AboutDialog)
 {
     ui->setupUi(this);
+
+    QFile licenseFile(Paths::docsPath() + "/LICENSE");
+    QTextStream in(&licenseFile);
+
+    ui->licenseTextEdit->setPlainText(in.readAll());
+    ui->descriptionLabel->setText(tr(
+                    "<b>Version: %1</b>\n"
+                    "Based on Qt %2\n\n\n"
+                    "Nevis is only a simple fast text editor.\n"
+                    "Nevis uses Qt toolkit for both front-end and back-end implementation!\n\n\n"
+                    "Copyright (C) 2014 by Alireza Savand\nhttps://github.com/Alir3z4/nevis/\n")
+                                     .arg(qApp->applicationVersion())
+                                     .arg(qVersion()));
+
 }
 
 AboutDialog::~AboutDialog()
