@@ -68,3 +68,8 @@ void MainWindow::on_actionSave_triggered()
         }
     }
 }
+
+void MainWindow::on_actionAboutQt_triggered()
+{
+    qApp->aboutQt();
+}

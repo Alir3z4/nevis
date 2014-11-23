@@ -38,6 +38,7 @@ public:
 private slots:
     void on_actionOpenFile_triggered();
     void on_actionSave_triggered();
+    void on_actionAboutQt_triggered();
 
 private:
     Ui::MainWindow *ui;
