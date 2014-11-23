@@ -63,4 +63,5 @@ FORMS    += ui/mainwindow.ui
 
 OTHER_FILES += \
     README.md \
-    LICENSE
+    LICENSE \
+    docs/LicenseTemplate
