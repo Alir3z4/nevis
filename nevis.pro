@@ -57,9 +57,11 @@ INSTALLS += target\
 SOURCES += main.cpp\
         ui/mainwindow.cpp \
     ui/dialog/about_dialog.cpp
+    utils/paths.cpp
 
 HEADERS  += ui/mainwindow.h \
     ui/dialog/about_dialog.h
+    utils/paths.h
 
 FORMS    += ui/mainwindow.ui \
     ui/dialog/about_dialog.ui
