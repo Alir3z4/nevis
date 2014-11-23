@@ -57,14 +57,17 @@ INSTALLS += target\
 SOURCES += main.cpp\
         ui/mainwindow.cpp \
     ui/dialog/about_dialog.cpp \
-    utils/paths.cpp
+    utils/paths.cpp \
+    ui/dialog/report_bug_dialog.cpp
 
 HEADERS  += ui/mainwindow.h \
     ui/dialog/about_dialog.h \
-    utils/paths.h
+    utils/paths.h \
+    ui/dialog/report_bug_dialog.h
 
 FORMS    += ui/mainwindow.ui \
-    ui/dialog/about_dialog.ui
+    ui/dialog/about_dialog.ui \
+    ui/dialog/report_bug_dialog.ui
 
 OTHER_FILES += \
     README.md \
