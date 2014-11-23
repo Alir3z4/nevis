@@ -24,6 +24,12 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    a.setApplicationName(QObject::tr("Nevis"));
+    a.setApplicationVersion("0000.00.00");
+    a.setOrganizationName("Alir3z4");
+    a.setOrganizationDomain("alir3z4.github.io.nevis");
+
     MainWindow w;
     w.show();
 
