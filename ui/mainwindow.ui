@@ -49,7 +49,35 @@
     <addaction name="actionAboutQt"/>
     <addaction name="actionAboutNevis"/>
    </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionUndo"/>
+    <addaction name="actionRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionCut"/>
+    <addaction name="actionCopy"/>
+    <addaction name="actionPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionSelectAll"/>
+    <addaction name="actionDeselct"/>
+    <addaction name="separator"/>
+    <addaction name="actionFind"/>
+    <addaction name="actionReplace"/>
+   </widget>
+   <widget class="QMenu" name="menuSettings">
+    <property name="title">
+     <string>&amp;Settings</string>
+    </property>
+    <addaction name="actionShowMenubar"/>
+    <addaction name="actionShowStatusbar"/>
+    <addaction name="actionShowToolbar"/>
+    <addaction name="actionShowPath"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuSettings"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
@@ -103,6 +131,98 @@
   <action name="actionAboutNevis">
    <property name="text">
     <string>About &amp;Nevis</string>
+   </property>
+  </action>
+  <action name="actionUndo">
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionRedo">
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Z</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cu&amp;t</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionCopy">
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>&amp;Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionSelectAll">
+   <property name="text">
+    <string>Select &amp;All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionDeselct">
+   <property name="text">
+    <string>Dese&amp;lct</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
+  </action>
+  <action name="actionFind">
+   <property name="text">
+    <string>&amp;Find</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionReplace">
+   <property name="text">
+    <string>&amp;Replace</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actionShowMenubar">
+   <property name="text">
+    <string>Show &amp;Menubar</string>
+   </property>
+  </action>
+  <action name="actionShowStatusbar">
+   <property name="text">
+    <string>Show Statusbar</string>
+   </property>
+  </action>
+  <action name="actionShowToolbar">
+   <property name="text">
+    <string>Show Toolbar</string>
+   </property>
+  </action>
+  <action name="actionShowPath">
+   <property name="text">
+    <string>Sho&amp;w Path</string>
    </property>
   </action>
  </widget>
