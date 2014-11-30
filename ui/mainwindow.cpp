@@ -131,3 +131,8 @@ void MainWindow::initializeMargin()
 
     connect(ui->textEditor, SIGNAL(textChanged()), this, SLOT(onTextChanged()));
 }
+
+void MainWindow::on_actionUndo_triggered()
+{
+    ui->textEditor->undo();
+}

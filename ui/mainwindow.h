@@ -41,6 +41,7 @@ private slots:
     void on_actionAboutQt_triggered();
     void on_actionAboutNevis_triggered();
     void on_actionReportBug_triggered();
+    void on_actionUndo_triggered();
     void onTextChanged();
 
 private:
