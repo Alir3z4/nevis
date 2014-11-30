@@ -35,6 +35,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     initializeTextEditor();
+    loadSettings();
 }
 
 MainWindow::~MainWindow()
