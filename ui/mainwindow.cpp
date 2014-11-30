@@ -88,6 +88,12 @@ void MainWindow::on_actionReportBug_triggered()
     report_bug_dialog.exec();
 }
 
+void MainWindow::onTextChanged()
+{
+    QFontMetrics fontMetrics = ui->textEditor->fontMetrics();
+    ui->textEditor->setMarginWidth(0, fontMetrics.width(QString::number(ui->textEditor->lines())) + 6);
+}
+
 
 void MainWindow::initializeFolding()
 {
