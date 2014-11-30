@@ -32,6 +32,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    initializeTextEditor();
 }
 
 MainWindow::~MainWindow()
@@ -94,6 +96,12 @@ void MainWindow::onTextChanged()
     ui->textEditor->setMarginWidth(0, fontMetrics.width(QString::number(ui->textEditor->lines())) + 6);
 }
 
+void MainWindow::initializeTextEditor()
+{
+    initializeMargin();
+    initializeCaretLine();
+    initializeFolding();
+}
 
 void MainWindow::initializeFolding()
 {
@@ -112,6 +120,7 @@ void MainWindow::initializeCaretLine()
     ui->textEditor->setCaretLineVisible(true);
     ui->textEditor->setCaretLineBackgroundColor(QColor("#ffe4e4"));
 }
+
 void MainWindow::initializeMargin()
 {
     QFontMetrics fontMetrics = QFontMetrics(ui->textEditor->font());

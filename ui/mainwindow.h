@@ -45,6 +45,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+    void initializeTextEditor();
     void initializeFolding();
     void initializeCaretLine();
     void initializeMargin();
