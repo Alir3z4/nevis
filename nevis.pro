@@ -4,7 +4,8 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
+LIBS += -lqt5scintilla2
 
 message(Compiling against Qt version: $$QT_MAJOR_VERSION)
 
@@ -65,7 +66,7 @@ HEADERS  += ui/mainwindow.h \
     utils/paths.h \
     ui/dialog/report_bug_dialog.h
 
-FORMS    += ui/mainwindow.ui \
+FORMS   += ui/mainwindow.ui \
     ui/dialog/about_dialog.ui \
     ui/dialog/report_bug_dialog.ui
 
