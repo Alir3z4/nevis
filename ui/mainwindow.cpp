@@ -88,6 +88,13 @@ void MainWindow::on_actionReportBug_triggered()
     report_bug_dialog.exec();
 }
 
+
+void MainWindow::initializeCaretLine()
+{
+    // Current line visible with special background color
+    ui->textEditor->setCaretLineVisible(true);
+    ui->textEditor->setCaretLineBackgroundColor(QColor("#ffe4e4"));
+}
 void MainWindow::initializeMargin()
 {
     QFontMetrics fontMetrics = QFontMetrics(ui->textEditor->font());
