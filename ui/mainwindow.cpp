@@ -96,6 +96,52 @@ void MainWindow::onTextChanged()
     ui->textEditor->setMarginWidth(0, fontMetrics.width(QString::number(ui->textEditor->lines())) + 6);
 }
 
+void MainWindow::loadSettings()
+{
+    QSettings settings;
+    settings.beginGroup("MainWindow");
+    move(settings.value("pos", QPoint(200, 200)).toPoint());
+    resize(settings.value("size", QSize(400, 400)).toSize());
+    setGeometry(settings.value("geometry", QRect(49, 331, 670, 445)).toRect());
+    if (settings.value("fullscreen").toBool()) {
+        showFullScreen();
+    }
+    restoreState(settings.value("state", QByteArray()).toByteArray());
+
+    settings.beginGroup("menuBar");
+    ui->menuBar->setHidden(settings.value("isHidden", false).toBool());
+    settings.endGroup();
+
+    settings.beginGroup("statusBar");
+    ui->statusBar->setHidden(settings.value("isHidden", false).toBool());
+    settings.endGroup();
+
+    settings.beginGroup("toolBar");
+    ui->toolBar->setHidden(settings.value("isHidden", false).toBool());
+    ui->toolBar->setGeometry(settings.value("geometry").toRect());
+    settings.endGroup();
+
+    settings.beginGroup("actionShowMenubar");
+    ui->actionShowMenubar->setChecked(settings.value("isChecked", true).toBool());
+    ui->actionShowMenubar->setShortcut(
+                QKeySequence(settings.value("shortcut", ui->actionShowMenubar->shortcut().toString()).toString()));
+    settings.endGroup();
+
+    settings.beginGroup("actionShowToolbar");
+    ui->actionShowToolbar->setChecked(settings.value("isChecked", true).toBool());
+    ui->actionShowToolbar->setShortcut(
+                QKeySequence(settings.value("shortcut", ui->actionShowToolbar->shortcut().toString()).toString()));
+    settings.endGroup();
+
+    settings.beginGroup("actionShowStatusbar");
+    ui->actionShowStatusbar->setChecked(settings.value("isChecked", true).toBool());
+    ui->actionShowStatusbar->setShortcut(
+                QKeySequence(settings.value("shortcut", ui->actionShowStatusbar->shortcut().toString()).toString()));
+    settings.endGroup();
+
+    settings.endGroup();
+}
+
 void MainWindow::initializeTextEditor()
 {
     initializeMargin();

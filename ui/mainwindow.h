@@ -46,6 +46,7 @@ private slots:
     void onTextChanged();
 
 
+    void loadSettings();
 private:
     Ui::MainWindow *ui;
 
