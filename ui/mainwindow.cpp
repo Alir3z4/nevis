@@ -49,7 +49,7 @@ void MainWindow::on_actionOpenFile_triggered()
             QMessageBox::critical(this, tr("Error"), tr("Could not open file"));
         }
         QTextStream in(&file);
-        ui->textEditor->setPlainText(in.readAll());
+        ui->textEditor->setText(in.readAll());
         file.close();
     }
 }
@@ -64,7 +64,7 @@ void MainWindow::on_actionSave_triggered()
             QMessageBox::critical(this, tr("Error"), tr("Could not save file"));
         } else {
             QTextStream stream(&file);
-            stream << ui->textEditor->toPlainText();
+            stream << ui->textEditor->text();
             stream.flush();;
             file.close();
         }
