@@ -136,3 +136,8 @@ void MainWindow::on_actionUndo_triggered()
 {
     ui->textEditor->undo();
 }
+
+void MainWindow::on_actionRedo_triggered()
+{
+    ui->textEditor->redo();
+}

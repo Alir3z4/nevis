@@ -42,7 +42,9 @@ private slots:
     void on_actionAboutNevis_triggered();
     void on_actionReportBug_triggered();
     void on_actionUndo_triggered();
+    void on_actionRedo_triggered();
     void onTextChanged();
+
 
 private:
     Ui::MainWindow *ui;
