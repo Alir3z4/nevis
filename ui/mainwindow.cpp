@@ -87,3 +87,14 @@ void MainWindow::on_actionReportBug_triggered()
     ReportBugDialog report_bug_dialog;
     report_bug_dialog.exec();
 }
+
+void MainWindow::initializeMargin()
+{
+    QFontMetrics fontMetrics = QFontMetrics(ui->textEditor->font());
+    ui->textEditor->setMarginsFont(ui->textEditor->font());
+    ui->textEditor->setMarginWidth(0, fontMetrics.width(QString::number(ui->textEditor->lines())) + 6);
+    ui->textEditor->setMarginLineNumbers(0, true);
+    ui->textEditor->setMarginsBackgroundColor(QColor("#cccccc"));
+
+    connect(ui->textEditor, SIGNAL(textChanged()), this, SLOT(onTextChanged()));
+}

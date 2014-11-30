@@ -44,6 +44,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void initializeMargin();
 };
 
 #endif // MAINWINDOW_H
