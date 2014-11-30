@@ -19,7 +19,14 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QPlainTextEdit" name="textEditor"/>
+     <widget class="QsciScintilla" name="textEditor">
+      <property name="toolTip">
+       <string/>
+      </property>
+      <property name="whatsThis">
+       <string/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -227,6 +234,13 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QsciScintilla</class>
+   <extends>QFrame</extends>
+   <header>Qsci/qsciscintilla.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
