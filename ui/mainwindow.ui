@@ -48,7 +48,7 @@
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menu_Help">
+   <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>&amp;Help</string>
     </property>
@@ -85,7 +85,7 @@
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuSettings"/>
-   <addaction name="menu_Help"/>
+   <addaction name="menuHelp"/>
   </widget>
   <widget class="QToolBar" name="toolBar">
    <attribute name="toolBarArea">
@@ -213,21 +213,36 @@
    </property>
   </action>
   <action name="actionShowMenubar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Show &amp;Menubar</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
   </action>
   <action name="actionShowStatusbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Show Statusbar</string>
    </property>
   </action>
   <action name="actionShowToolbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Show Toolbar</string>
    </property>
   </action>
   <action name="actionShowPath">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Sho&amp;w Path</string>
    </property>
@@ -278,23 +293,7 @@
   <connection>
    <sender>actionShowStatusbar</sender>
    <signal>toggled(bool)</signal>
-   <receiver>actionShowStatusbar</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionShowToolbar</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>MainWindow</receiver>
+   <receiver>statusBar</receiver>
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -303,7 +302,23 @@
     </hint>
     <hint type="destinationlabel">
      <x>199</x>
-     <y>149</y>
+     <y>288</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShowToolbar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>toolBar</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>27</y>
     </hint>
    </hints>
   </connection>
