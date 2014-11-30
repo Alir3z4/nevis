@@ -89,6 +89,17 @@ void MainWindow::on_actionReportBug_triggered()
 }
 
 
+void MainWindow::initializeFolding()
+{
+    QsciScintilla::FoldStyle state = static_cast<QsciScintilla::FoldStyle>((ui->textEditor->folding()) * 5);
+
+    if (state) {
+        ui->textEditor->foldAll(false);
+    }
+
+    ui->textEditor->setFolding(state);
+}
+
 void MainWindow::initializeCaretLine()
 {
     // Current line visible with special background color

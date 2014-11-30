@@ -44,6 +44,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    void initializeFolding();
     void initializeCaretLine();
     void initializeMargin();
 };
