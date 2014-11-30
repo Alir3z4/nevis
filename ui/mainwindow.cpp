@@ -22,6 +22,7 @@
 #include "ui_mainwindow.h"
 #include "ui/dialog/about_dialog.h"
 #include "ui/dialog/report_bug_dialog.h"
+#include <QSettings>
 #include <QFileDialog>
 #include <QFile>
 #include <QMessageBox>
@@ -94,6 +95,49 @@ void MainWindow::onTextChanged()
 {
     QFontMetrics fontMetrics = ui->textEditor->fontMetrics();
     ui->textEditor->setMarginWidth(0, fontMetrics.width(QString::number(ui->textEditor->lines())) + 6);
+}
+
+void MainWindow::saveSettings()
+{
+    QSettings settings;
+    settings.beginGroup("MainWindow");
+
+    settings.setValue("pos", pos());
+    settings.setValue("size", size());
+    settings.setValue("geometry", geometry());
+    settings.setValue("fullScreen", isFullScreen());
+    settings.setValue("state", saveState());
+
+    settings.beginGroup("menuBar");
+    settings.setValue("isHidden", ui->menuBar->isHidden());
+    settings.endGroup();
+
+
+    settings.beginGroup("statusBar");
+    settings.setValue("isHidden", ui->statusBar->isHidden());
+    settings.endGroup();
+
+    settings.beginGroup("toolBar");
+    settings.setValue("isHidden", ui->toolBar->isHidden());
+    settings.setValue("geometry", ui->toolBar->geometry());
+    settings.endGroup();
+
+    settings.beginGroup("actionShowMenubar");
+    settings.setValue("isChecked", ui->actionShowMenubar->isChecked());
+    settings.setValue("shortcut", ui->actionShowMenubar->shortcut());
+    settings.endGroup();
+
+    settings.beginGroup("actionShowToolbar");
+    settings.setValue("isChecked", ui->actionShowToolbar->isChecked());
+    settings.setValue("shortcut", ui->actionShowToolbar->shortcut());
+    settings.endGroup();
+
+    settings.beginGroup("actionShowStatusbar");
+    settings.setValue("isChecked", ui->actionShowStatusbar->isChecked());
+    settings.setValue("shortcut", ui->actionShowStatusbar->shortcut());
+    settings.endGroup();
+
+    settings.endGroup();
 }
 
 void MainWindow::loadSettings()
@@ -176,6 +220,13 @@ void MainWindow::initializeMargin()
     ui->textEditor->setMarginsBackgroundColor(QColor("#cccccc"));
 
     connect(ui->textEditor, SIGNAL(textChanged()), this, SLOT(onTextChanged()));
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    Q_UNUSED(event)
+
+    saveSettings();
 }
 
 void MainWindow::on_actionUndo_triggered()

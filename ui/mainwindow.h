@@ -46,7 +46,10 @@ private slots:
     void onTextChanged();
 
 
+    void saveSettings();
     void loadSettings();
+
+
 private:
     Ui::MainWindow *ui;
 
@@ -54,6 +57,8 @@ private:
     void initializeFolding();
     void initializeCaretLine();
     void initializeMargin();
+
+    void closeEvent(QCloseEvent *event);
 };
 
 #endif // MAINWINDOW_H
