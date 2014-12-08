@@ -29,9 +29,6 @@ class QscilexerFinder : public QObject
 public:
     explicit QscilexerFinder(QObject *parent = 0);
 
-signals:
-
-public slots:
 
 };
 
