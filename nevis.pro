@@ -59,12 +59,14 @@ SOURCES += main.cpp\
         ui/mainwindow.cpp \
     ui/dialog/about_dialog.cpp \
     utils/paths.cpp \
-    ui/dialog/report_bug_dialog.cpp
+    ui/dialog/report_bug_dialog.cpp \
+    utils/qscilexer_finder.cpp
 
 HEADERS  += ui/mainwindow.h \
     ui/dialog/about_dialog.h \
     utils/paths.h \
-    ui/dialog/report_bug_dialog.h
+    ui/dialog/report_bug_dialog.h \
+    utils/qscilexer_finder.h
 
 FORMS   += ui/mainwindow.ui \
     ui/dialog/about_dialog.ui \
