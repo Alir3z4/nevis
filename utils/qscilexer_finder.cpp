@@ -19,8 +19,19 @@
 ****************************************************************************************/
 
 #include "qscilexer_finder.h"
+#include "Qsci/qscilexerbash.h"
+#include "Qsci/qscilexercpp.h"
+#include "Qsci/qscilexerpython.h"
+
 
 QscilexerFinder::QscilexerFinder(QObject *parent) :
     QObject(parent)
 {
+    this->lexers = new QHash<const QString, QsciLexer*>;
+
+    this->lexers->insert(QString("sh|"), new QsciLexerBash());
+    this->lexers->insert(QString("c|cpp|h|hpp|"), new QsciLexerCPP());
+    this->lexers->insert(QString("py|pxx|"), new QsciLexerPython());
+
+}
 }

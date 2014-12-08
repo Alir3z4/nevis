@@ -22,6 +22,7 @@
 #define QSCILEXER_FINDER_H
 
 #include <QObject>
+#include <Qsci/qscilexer.h>
 
 class QscilexerFinder : public QObject
 {
@@ -30,6 +31,8 @@ public:
     explicit QscilexerFinder(QObject *parent = 0);
 
 
+private:
+    QHash<const QString, QsciLexer*> *lexers;
 };
 
 #endif // QSCILEXER_FINDER_H
