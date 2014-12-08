@@ -28,6 +28,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -189,6 +190,8 @@ void MainWindow::loadSettings()
 
 void MainWindow::initializeTextEditor()
 {
+    this->lexerFinder = new QscilexerFinder();
+
     initializeMargin();
     initializeCaretLine();
     initializeFolding();

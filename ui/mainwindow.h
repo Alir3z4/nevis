@@ -22,6 +22,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "utils/qscilexer_finder.h"
 
 namespace Ui {
 class MainWindow;
@@ -52,6 +53,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QscilexerFinder *lexerFinder;
 
     void initializeTextEditor();
     void initializeFolding();
