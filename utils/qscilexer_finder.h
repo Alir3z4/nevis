@@ -29,6 +29,7 @@ class QscilexerFinder : public QObject
     Q_OBJECT
 public:
     explicit QscilexerFinder(QObject *parent = 0);
+    QsciLexer *findLexer(const QString &fileExtension) const;
 
     QHash<const QString, QsciLexer *> *getLexers() const;
 

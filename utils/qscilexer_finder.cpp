@@ -34,6 +34,23 @@ QscilexerFinder::QscilexerFinder(QObject *parent) :
     this->lexers->insert(QString("py|pxx|"), new QsciLexerPython());
 
 }
+
+QsciLexer *QscilexerFinder::findLexer(const QString &fileExtension) const
+{
+    QHash<const QString, QsciLexer*>::const_iterator i = this->getLexers()->constBegin();
+    QsciLexer *lexer = 0;
+
+    while (i != this->getLexers()->constEnd()) {
+        foreach (QString fileExt, i.key().split("|")) {
+            if (fileExt == fileExtension) {
+                lexer = i.value();
+            }
+        }
+        ++i;
+    }
+
+    return lexer;
+}
 QHash<const QString, QsciLexer *> *QscilexerFinder::getLexers() const
 {
     return lexers;
