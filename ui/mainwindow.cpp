@@ -37,6 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     initializeTextEditor();
     loadSettings();
+
 }
 
 MainWindow::~MainWindow()
@@ -56,6 +57,14 @@ void MainWindow::on_actionOpenFile_triggered()
         QTextStream in(&file);
         ui->textEditor->setText(in.readAll());
         file.close();
+
+
+        QString fileExtention = fileName.split('.').last().toLower();
+        QsciLexer *lexer = this->lexerFinder->findLexer(fileExtention);
+
+        if (lexer != 0) {
+            ui->textEditor->setLexer(lexer);
+        }
     }
 }
 
