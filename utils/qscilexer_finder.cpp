@@ -34,4 +34,7 @@ QscilexerFinder::QscilexerFinder(QObject *parent) :
     this->lexers->insert(QString("py|pxx|"), new QsciLexerPython());
 
 }
+QHash<const QString, QsciLexer *> *QscilexerFinder::getLexers() const
+{
+    return lexers;
 }

@@ -30,6 +30,7 @@ class QscilexerFinder : public QObject
 public:
     explicit QscilexerFinder(QObject *parent = 0);
 
+    QHash<const QString, QsciLexer *> *getLexers() const;
 
 private:
     QHash<const QString, QsciLexer*> *lexers;
